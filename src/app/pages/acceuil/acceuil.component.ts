@@ -8,6 +8,9 @@ import { AccueilService } from '../.././services/accueil.service';
 })
 export class AcceuilComponent implements OnInit {
 
+  private  adverts:  object = [];
+  private searchText: string;
+
   constructor(private accueilService:AccueilService) { }
 
   ngOnInit() {
@@ -17,9 +20,12 @@ export class AcceuilComponent implements OnInit {
   getAllAdvert(){
     return this.accueilService.getAdvert().subscribe(
       res => {
-        console.log(res)
-        err => console.log(err)
+        this.adverts = res;
     }
     );
+  }
+
+  dataChanged(serched) {
+    console.log(serched)
   }
 }

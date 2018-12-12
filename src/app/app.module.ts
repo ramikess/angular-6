@@ -10,19 +10,23 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { TokenInterceptor } from './authentification/service/token.interceptor.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AccueilPipePipe } from './pages/acceuil/accueil-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    AcceuilComponent
+    AcceuilComponent,
+    AccueilPipePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-      HttpClientModule
+      HttpClientModule,
+    FormsModule
   ],
   providers: [
     {
